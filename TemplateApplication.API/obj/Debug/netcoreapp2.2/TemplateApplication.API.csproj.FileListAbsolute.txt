@@ -1,0 +1,11 @@
+C:\Projetos\netcore-template-application\TemplateApplication.API\bin\Debug\netcoreapp2.2\TemplateApplication.API.deps.json
+C:\Projetos\netcore-template-application\TemplateApplication.API\bin\Debug\netcoreapp2.2\TemplateApplication.API.runtimeconfig.json
+C:\Projetos\netcore-template-application\TemplateApplication.API\bin\Debug\netcoreapp2.2\TemplateApplication.API.runtimeconfig.dev.json
+C:\Projetos\netcore-template-application\TemplateApplication.API\bin\Debug\netcoreapp2.2\TemplateApplication.API.dll
+C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.csprojAssemblyReference.cache
+C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.csproj.CoreCompileInputs.cache
+C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.RazorAssemblyInfo.cache
+C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.RazorAssemblyInfo.cs
+C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.AssemblyInfoInputs.cache
+C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.AssemblyInfo.cs
+C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.RazorTargetAssemblyInfo.cache
