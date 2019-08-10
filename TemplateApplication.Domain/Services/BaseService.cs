@@ -35,6 +35,11 @@ namespace TemplateApplication.Domain.Services
             this.repository.Update(objs);
         }
 
+        public T FindById(int id)
+        {
+            return this.repository.FindById(id);
+        }
+
         public List<T> ListActives()
         {
             return this.repository.ListActives();

@@ -52,6 +52,11 @@ namespace TemplateApplication.Data.Repositories
             this.context.SaveChanges();
         }
 
+        public T FindById(int id)
+        {
+            return this.context.Set<T>().Find(id);
+        }
+
         public List<T> ListActives()
         {
             IQueryable<T> query = this.context.Set<T>().Where(w => w.Active == "A");

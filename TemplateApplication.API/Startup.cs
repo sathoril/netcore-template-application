@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TemplateApplication.API.StartupConfiguration;
 using TemplateApplication.Data.Context;
 
 namespace TemplateApplication.API
@@ -21,6 +22,8 @@ namespace TemplateApplication.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            InjectionConfig.Configure(services);
 
             services.AddDbContext<DatabaseContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("DatabaseContext")));

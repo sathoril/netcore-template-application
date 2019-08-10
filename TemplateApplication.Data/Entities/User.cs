@@ -4,8 +4,8 @@ using System.Text;
 
 namespace TemplateApplication.Data.Entities
 {
-    public class Usuario : BaseEntity
+    public class User : BaseEntity
     { 
-        public String Nome { get; private set; }
+        public String Name { get; set; }
     }
 }

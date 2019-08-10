@@ -13,9 +13,15 @@ namespace TemplateApplication.Data.Entities
         public DateTime ModifiedDate { get; private set; }
         public String Active { get; private set; }
         
-        protected void InactivateEntity()
+        public void InactivateEntity()
         {
             this.Active = "I";
+            this.EntityModified();
+        }
+
+        public void ActivateEntity()
+        {
+            this.Active = "A";
             this.EntityModified();
         }
 
@@ -29,6 +35,7 @@ namespace TemplateApplication.Data.Entities
         {
             this.CreationDate = DateTime.Now;
             this.CreationUser = Environment.UserName;
+            this.ActivateEntity();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace TemplateApplication.Domain.Services.Interfaces
         void Add(List<T> objs);
         void Update(T obj);
         void Update(List<T> obj);
+        T FindById(int id);
         List<T> ListActives();
     }
 }
