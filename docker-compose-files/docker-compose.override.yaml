@@ -1,0 +1,10 @@
+﻿version: "3"
+
+services: 
+ microservices-db:
+  environment:
+   - SA_PASSWORD=desenvol2019!
+   - ACCEPT_EULA=Y
+  ports:
+   - "1401:1433"
+  tty: true

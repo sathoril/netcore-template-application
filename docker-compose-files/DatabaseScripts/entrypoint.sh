@@ -1,0 +1,1 @@
+﻿/opt/mssql/bin/sqlservr & (echo "Aguardando SQL Server iniciar...." && sleep 15 &&  ./opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U sa -P desenvol2019! -d master -i create.sql && /bin/bash)

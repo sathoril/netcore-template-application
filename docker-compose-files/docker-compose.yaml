@@ -1,0 +1,15 @@
+version: "3"
+
+networks:
+ poc-microservice-network:
+  driver: bridge
+
+services:
+ microservices-db:
+  container_name: poc-microservices-db
+  image: poc-microservices/db
+  build: 
+   context: ./DatabaseScripts
+   dockerfile: ./Dockerfile
+  networks:
+   - poc-microservice-network
