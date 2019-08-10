@@ -1,46 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using TemplateApplication.Domain.Entities;
 using TemplateApplication.Domain.Repositories.Interfaces;
 using TemplateApplication.Domain.Services.Interfaces;
 
 namespace TemplateApplication.Domain.Services
 {
-    public class BaseService<T> : IBaseService<T> where T : class
+    public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : BaseEntity
     {
-        private readonly IBaseRepository<T> repository;
+        private readonly IBaseRepository<TEntity> repository;
 
-        public BaseService(IBaseRepository<T> repository)
+        public BaseService(IBaseRepository<TEntity> repository)
         {
             this.repository = repository;
         }
 
-        public void Add(T obj)
+        public void Add(TEntity obj) 
         {
             this.repository.Add(obj);
         }
 
-        public void Add(List<T> objs)
+        public void Add(List<TEntity> objs)
         {
             this.repository.Add(objs);
         }
 
-        public void Update(T obj)
+        public void Update(TEntity obj)
         {
+            obj.EntityModified();
             this.repository.Update(obj);
         }
 
-        public void Update(List<T> objs)
+        public void Update(List<TEntity> objs)
         {
+            foreach (var obj in objs)
+            {
+                obj.EntityModified();
+            }
+
             this.repository.Update(objs);
         }
 
-        public T FindById(int id)
+        public TEntity FindById(int id)
         {
             return this.repository.FindById(id);
         }
 
-        public List<T> ListActives()
+        public List<TEntity> ListActives()
         {
             return this.repository.ListActives();
         }

@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace TemplateApplication.Data.Entities
+namespace TemplateApplication.Domain.Entities
 {
     public class BaseEntity
     {
-        public BaseEntity() => this.EntityCreated(); 
+        public BaseEntity() { }
 
-        public Int32 Id { get; private set; }
-        public String CreationUser { get; private set; }
-        public DateTime CreationDate { get; private set; }
-        public String ModifiedUser { get; private set; }
-        public DateTime ModifiedDate { get; private set; }
-        public String Active { get; private set; }
-        
+        public Int32 Id { get; set; }
+        public String CreationUser { get; set; }
+        public DateTime CreationDate { get; set; }
+        public String ModifiedUser { get; set; }
+        public DateTime ModifiedDate { get; set; }
+        public String Active { get; set; }
+
         public void InactivateEntity()
         {
-            this.Active = "I";
+            this.Active = "I";  
             this.EntityModified();
         }
 
@@ -25,13 +25,13 @@ namespace TemplateApplication.Data.Entities
             this.EntityModified();
         }
 
-        private void EntityModified()
+        public void EntityModified()
         {
             this.ModifiedDate = DateTime.Now;
             this.ModifiedUser = Environment.UserName;
         }
 
-        private void EntityCreated()
+        public void EntityCreated()
         {
             this.CreationDate = DateTime.Now;
             this.CreationUser = Environment.UserName;

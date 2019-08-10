@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TemplateApplication.Data.Entities;
+using TemplateApplication.Domain.Entities;
 
 namespace TemplateApplication.Data.Context.EntitiesConfig
 {

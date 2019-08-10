@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TemplateApplication.Data.Entities;
+using TemplateApplication.Domain.Entities;
 using TemplateApplication.Domain.Services.Interfaces;
 
 namespace TemplateApplication.API.Controllers
@@ -35,7 +32,7 @@ namespace TemplateApplication.API.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
         [Route("find")]
         public ActionResult<string> Find(int id)
         {

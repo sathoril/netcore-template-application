@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TemplateApplication.Data.Context.EntitiesConfig;
-using TemplateApplication.Data.Entities;
+using TemplateApplication.Domain.Entities;
 
 namespace TemplateApplication.Data.Context
 {
@@ -21,7 +18,6 @@ namespace TemplateApplication.Data.Context
         {
             // Here just configure your entities
             modelBuilder.ApplyConfiguration(new UserConfig());
-            //modelBuilder.ApplyConfiguration(new BaseEntityConfig());
         }
     }
 }

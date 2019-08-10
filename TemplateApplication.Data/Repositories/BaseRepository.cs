@@ -1,12 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TemplateApplication.Data.Context;
-using TemplateApplication.Data.Entities;
+using TemplateApplication.Domain.Entities;
 using TemplateApplication.Domain.Repositories.Interfaces;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace TemplateApplication.Data.Repositories
 {
@@ -37,19 +34,21 @@ namespace TemplateApplication.Data.Repositories
 
         public void Update(T obj)
         {
-            this.Update(new List<T> { obj });
+            this.context.Entry(obj).State = EntityState.Modified;
+
+            this.context.Update(obj);
+            this.context.SaveChanges();
         }
 
         public void Update(List<T> objs)
         {
-            this.context.Entry(objs).State = EntityState.Modified;
-
             foreach (var obj in objs)
             {
+                this.context.Entry(obj).State = EntityState.Modified;
                 this.context.Update(obj);
+                this.context.SaveChanges();
             }
 
-            this.context.SaveChanges();
         }
 
         public T FindById(int id)
