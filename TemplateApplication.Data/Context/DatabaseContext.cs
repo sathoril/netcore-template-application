@@ -10,7 +10,9 @@ namespace TemplateApplication.Data.Context
         // Here just configure your entities
         // public DbSet<MyEntity> MyProperty { get; set; }
 
-        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

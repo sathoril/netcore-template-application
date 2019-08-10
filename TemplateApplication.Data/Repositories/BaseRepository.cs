@@ -17,6 +17,7 @@ namespace TemplateApplication.Data.Repositories
         public BaseRepository(DatabaseContext context)
         {
             this.context = context;
+            this.context.Set<T>();
         }
 
         public void Add(T obj)
@@ -36,11 +37,13 @@ namespace TemplateApplication.Data.Repositories
 
         public void Update(T obj)
         {
-            this.Add(new List<T> { obj });
+            this.Update(new List<T> { obj });
         }
 
         public void Update(List<T> objs)
         {
+            this.context.Entry(objs).State = EntityState.Modified;
+
             foreach (var obj in objs)
             {
                 this.context.Update(obj);

@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateApplication.Data", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateApplication.Domain", "TemplateApplication.Domain\TemplateApplication.Domain.csproj", "{DC3761FE-2F8E-41EA-B540-027FEAE3C39A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- API", "1- API", "{93155B16-8E24-4AA5-819E-FA74FDD7939D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{30CD230E-9776-49F9-9F48-076933A3FD99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Data", "3 - Data", "{58AD87ED-0051-4352-BF27-3582DDB35BDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +64,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CED12BFE-0437-46A3-A5C7-355C3BBA342D} = {93155B16-8E24-4AA5-819E-FA74FDD7939D}
+		{011E02F2-5223-4D2A-943C-AE72534CCA0F} = {58AD87ED-0051-4352-BF27-3582DDB35BDC}
+		{DC3761FE-2F8E-41EA-B540-027FEAE3C39A} = {30CD230E-9776-49F9-9F48-076933A3FD99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {06B0BC9E-97E1-4453-A3E0-D51AB4178508}

@@ -9,3 +9,11 @@ C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netco
 C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.AssemblyInfoInputs.cache
 C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.AssemblyInfo.cs
 C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.RazorTargetAssemblyInfo.cache
+C:\Projetos\netcore-template-application\TemplateApplication.API\bin\Debug\netcoreapp2.2\TemplateApplication.API.pdb
+C:\Projetos\netcore-template-application\TemplateApplication.API\bin\Debug\netcoreapp2.2\TemplateApplication.Data.dll
+C:\Projetos\netcore-template-application\TemplateApplication.API\bin\Debug\netcoreapp2.2\TemplateApplication.Domain.dll
+C:\Projetos\netcore-template-application\TemplateApplication.API\bin\Debug\netcoreapp2.2\TemplateApplication.Data.pdb
+C:\Projetos\netcore-template-application\TemplateApplication.API\bin\Debug\netcoreapp2.2\TemplateApplication.Domain.pdb
+C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.csproj.CopyComplete
+C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.dll
+C:\Projetos\netcore-template-application\TemplateApplication.API\obj\Debug\netcoreapp2.2\TemplateApplication.API.pdb
