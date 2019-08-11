@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TemplateApplication.Domain.Entities;
+using TemplateApplication.Domain.Entities.Validation;
 using TemplateApplication.Domain.Repositories.Interfaces;
 using TemplateApplication.Domain.Services.Interfaces;
 
@@ -16,6 +17,13 @@ namespace TemplateApplication.Domain.Services
 
         public void Add(TEntity obj) 
         {
+            ValidationState validation = obj.Validate();
+
+            obj.EntityCreated();
+
+            if (validation.HasErrors()) 
+                return;
+
             this.repository.Add(obj);
         }
 
@@ -26,6 +34,11 @@ namespace TemplateApplication.Domain.Services
 
         public void Update(TEntity obj)
         {
+            ValidationState validation = obj.Validate();
+
+            if (validation.HasErrors())
+                return;
+
             obj.EntityModified();
             this.repository.Update(obj);
         }
