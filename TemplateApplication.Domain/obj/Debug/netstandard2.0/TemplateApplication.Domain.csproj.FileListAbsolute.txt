@@ -6,3 +6,4 @@ C:\Projetos\netcore-template-application\TemplateApplication.Domain\obj\Debug\ne
 C:\Projetos\netcore-template-application\TemplateApplication.Domain\obj\Debug\netstandard2.0\TemplateApplication.Domain.AssemblyInfo.cs
 C:\Projetos\netcore-template-application\TemplateApplication.Domain\obj\Debug\netstandard2.0\TemplateApplication.Domain.dll
 C:\Projetos\netcore-template-application\TemplateApplication.Domain\obj\Debug\netstandard2.0\TemplateApplication.Domain.pdb
+C:\Projetos\netcore-template-application\TemplateApplication.Domain\obj\Debug\netstandard2.0\TemplateApplication.Domain.csprojAssemblyReference.cache
