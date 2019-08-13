@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TemplateApplication.API.Extensions;
 using TemplateApplication.API.StartupConfiguration;
 using TemplateApplication.Data.Context;
 
@@ -23,13 +24,14 @@ namespace TemplateApplication.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            GlobalExceptionHandlerMiddlewareExtensions.AddGlobalExceptionHandlerMiddleware(services);
             InjectionConfig.Configure(services);
 
             services.AddDbContext<DatabaseContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("DatabaseContext")));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline. (Middlewares)
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -42,6 +44,7 @@ namespace TemplateApplication.API
                 app.UseHsts();
             }
 
+            GlobalExceptionHandlerMiddlewareExtensions.UseGlobalExceptionHandlerMiddleware(app);
             app.UseHttpsRedirection();
             app.UseMvc();
         }
