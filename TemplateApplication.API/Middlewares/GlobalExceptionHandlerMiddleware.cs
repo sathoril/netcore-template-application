@@ -6,11 +6,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using TemplateApplication.Domain.Entities.Logs;
+using TemplateApplication.Domain.Services;
+using TemplateApplication.Domain.Services.Interfaces;
 
 namespace TemplateApplication.API.Middlewares
 {
     public class GlobalExceptionHandlerMiddleware : IMiddleware
     {
+        private readonly ILogService<ApplicationLog> service;
+
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             try
@@ -30,7 +35,7 @@ namespace TemplateApplication.API.Middlewares
 
             var json = new
             {
-                context.Response.StatusCode,
+                StatusCode = context.Response.StatusCode,
                 TraceId = context.TraceIdentifier,
                 Message = exception.Message,
                 InnerException = exception.InnerException,

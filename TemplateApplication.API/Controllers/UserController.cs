@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TemplateApplication.Domain.Entities;
+using TemplateApplication.Domain.Entities.Logs;
 using TemplateApplication.Domain.Services.Interfaces;
 
 namespace TemplateApplication.API.Controllers
@@ -11,18 +12,28 @@ namespace TemplateApplication.API.Controllers
     public class UserController : ControllerBase
     {
         private readonly IBaseService<User> service;
+        private readonly ILogService<ApplicationLog> applicationLog;
 
-        public UserController(IBaseService<User> service)
+        public UserController(IBaseService<User> service, ILogService<ApplicationLog> applicationLog)
         {
             this.service = service;
+            this.applicationLog = applicationLog;
         }
 
         [HttpGet]
         [Route("list")]
         public ActionResult List()
         {
-            List<User> users = this.service.ListActives();
-            return Ok(users);
+            try
+            {
+                List<User> users = this.service.ListActives();
+                return Ok(users);
+            }
+            catch(Exception ex)
+            {
+                this.applicationLog.LogApplicationInfo("Teste");
+                return BadRequest(ex);
+            }
         }
 
         [HttpGet]

@@ -24,8 +24,8 @@ namespace TemplateApplication.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            GlobalExceptionHandlerMiddlewareExtensions.AddGlobalExceptionHandlerMiddleware(services);
             InjectionConfig.Configure(services);
+            GlobalExceptionHandlerMiddlewareExtensions.AddGlobalExceptionHandlerMiddleware(services);
 
             services.AddDbContext<DatabaseContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("DatabaseContext")));

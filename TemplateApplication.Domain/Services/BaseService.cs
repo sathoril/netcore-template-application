@@ -5,47 +5,47 @@ using TemplateApplication.Domain.Services.Interfaces;
 
 namespace TemplateApplication.Domain.Services
 {
-    public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : BaseEntity
+    public class BaseService<T> : IBaseService<T> where T : class
     {
-        private readonly IBaseRepository<TEntity> repository;
+        public readonly IBaseRepository<T> repository;
 
-        public BaseService(IBaseRepository<TEntity> repository)
+        public BaseService(IBaseRepository<T> repository)
         {
             this.repository = repository;
         }
 
-        public void Add(TEntity obj) 
+        public virtual void Add(T obj) 
         {
             this.repository.Add(obj);
         }
 
-        public void Add(List<TEntity> objs)
+        public virtual void Add(List<T> objs)
         {
             this.repository.Add(objs);
         }
 
-        public void Update(TEntity obj)
+        public virtual void Update(T obj)
         {
-            obj.EntityModified();
+            (obj as BaseEntity).EntityModified();
             this.repository.Update(obj);
         }
 
-        public void Update(List<TEntity> objs)
+        public virtual void Update(List<T> objs)
         {
             foreach (var obj in objs)
             {
-                obj.EntityModified();
+                (obj as BaseEntity).EntityModified();
             }
 
             this.repository.Update(objs);
         }
 
-        public TEntity FindById(int id)
+        public virtual T FindById(int id)
         {
             return this.repository.FindById(id);
         }
 
-        public List<TEntity> ListActives()
+        public List<T> ListActives()
         {
             return this.repository.ListActives();
         }
