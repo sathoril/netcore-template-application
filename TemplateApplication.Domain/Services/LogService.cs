@@ -1,41 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TemplateApplication.Domain.Entities;
 using TemplateApplication.Domain.Entities.Logs;
-using TemplateApplication.Domain.Repositories;
+using TemplateApplication.Domain.Helpers;
 using TemplateApplication.Domain.Repositories.Interfaces;
 using TemplateApplication.Domain.Services.Interfaces;
 
 namespace TemplateApplication.Domain.Services
 {
-    public class LogService<T> : BaseService<T>, ILogService<T> where T : class
+    public class LogService : BaseService<Log>, ILogService
     {
-        private readonly IExceptionLogRepository exceptionLogRepository;
-        private readonly IApplicationLogRepository applicationLogRepository;
-        private readonly IBaseRepository<T> baseRepository;
-        public LogService(IExceptionLogRepository exceptionLogRepository, IApplicationLogRepository applicationLogRepository) : base(exceptionLogRepository)
+        private readonly IBaseRepository<Log> logRepository;
+
+        public LogService(IBaseRepository<Log> logRepository) : base(logRepository)
         {
-            this.baseRepository = baseRepository;
-            //if(typeof(T) == typeof(ExceptionLog))
-            //    this.exceptionLogRepository = (IExceptionLogRepository)baseRepository;
-
-            //if (typeof(T) == typeof(ApplicationLog))
-            //    this.applicationLogRepository = (IApplicationLogRepository)baseRepository;
+            this.logRepository = logRepository;
         }
-
-        private ExceptionLog exceptionLog;
-        private ApplicationLog applicationLog;
 
         public void LogApplicationInfo(string message)
         {
-            this.applicationLog = new ApplicationLog(message);
-            this.baseRepository.Add(this.applicationLog);
+            var applicationLog = new Log(message, LogTypeEnumerator.ApplicationLog);
+            this.logRepository.Add(applicationLog);
         }
 
         public void LogException(Exception ex)
         {
-            throw new NotImplementedException();
+            var exceptionLog = new Log(LogTypeEnumerator.ExceptionLog, ex);
+            this.logRepository.Add(exceptionLog);
         }
     }
 }

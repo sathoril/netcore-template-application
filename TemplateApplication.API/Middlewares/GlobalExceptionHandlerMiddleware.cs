@@ -14,7 +14,12 @@ namespace TemplateApplication.API.Middlewares
 {
     public class GlobalExceptionHandlerMiddleware : IMiddleware
     {
-        private readonly ILogService<ApplicationLog> service;
+        private readonly ILogService logService;
+
+        public GlobalExceptionHandlerMiddleware(ILogService logService)
+        {
+            this.logService = logService;
+        }
 
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
@@ -25,6 +30,7 @@ namespace TemplateApplication.API.Middlewares
             catch (Exception ex)
             {
                 await GlobalHandleExceptionAsync(context, ex);
+                logService.LogException(ex);
             }
         }
 

@@ -9,7 +9,7 @@ namespace TemplateApplication.Data.Context
     {
         // Here just configure your entities
         public DbSet<User> User { get; set; }
-        public DbSet<ApplicationLog> ApplicationLog { get; set; }
+        public DbSet<Log> Log { get; set; }
 
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
@@ -20,7 +20,7 @@ namespace TemplateApplication.Data.Context
         {
             // Here just configure your entities
             modelBuilder.ApplyConfiguration(new UserConfig());
-            modelBuilder.ApplyConfiguration(new ApplicationLogConfig());
+            modelBuilder.ApplyConfiguration(new LogConfig());
         }
     }
 }

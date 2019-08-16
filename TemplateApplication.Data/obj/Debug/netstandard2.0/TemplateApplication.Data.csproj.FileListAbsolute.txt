@@ -10,3 +10,5 @@ C:\Projetos\netcore-template-application\TemplateApplication.Data\obj\Debug\nets
 C:\Projetos\netcore-template-application\TemplateApplication.Data\obj\Debug\netstandard2.0\TemplateApplication.Data.csproj.CopyComplete
 C:\Projetos\netcore-template-application\TemplateApplication.Data\obj\Debug\netstandard2.0\TemplateApplication.Data.dll
 C:\Projetos\netcore-template-application\TemplateApplication.Data\obj\Debug\netstandard2.0\TemplateApplication.Data.pdb
+C:\Projetos\netcore-template-application\TemplateApplication.Data\bin\Debug\netstandard2.0\Newtonsoft.Json.dll
+C:\Projetos\netcore-template-application\TemplateApplication.Data\bin\Debug\netstandard2.0\Newtonsoft.Json.xml
