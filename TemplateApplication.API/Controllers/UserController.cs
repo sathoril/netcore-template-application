@@ -23,7 +23,6 @@ namespace TemplateApplication.API.Controllers
         public ActionResult List()
         {
                 List<User> users = this.service.ListActives();
-                throw new Exception("Exceção teste");
                 return Ok(users);
         }
 
