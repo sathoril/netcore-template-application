@@ -12,28 +12,19 @@ namespace TemplateApplication.API.Controllers
     public class UserController : ControllerBase
     {
         private readonly IBaseService<User> service;
-        private readonly ILogService<ApplicationLog> applicationLog;
 
-        public UserController(IBaseService<User> service, ILogService<ApplicationLog> applicationLog)
+        public UserController(IBaseService<User> service)
         {
             this.service = service;
-            this.applicationLog = applicationLog;
         }
 
         [HttpGet]
         [Route("list")]
         public ActionResult List()
         {
-            try
-            {
                 List<User> users = this.service.ListActives();
+                throw new Exception("Exceção teste");
                 return Ok(users);
-            }
-            catch(Exception ex)
-            {
-                this.applicationLog.LogApplicationInfo("Teste");
-                return BadRequest(ex);
-            }
         }
 
         [HttpGet]

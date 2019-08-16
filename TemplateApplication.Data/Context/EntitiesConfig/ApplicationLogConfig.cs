@@ -7,14 +7,15 @@ using TemplateApplication.Domain.Entities.Logs;
 
 namespace TemplateApplication.Data.Context.EntitiesConfig
 {
-    public class ApplicationLogConfig : IEntityTypeConfiguration<ApplicationLog>
+    public class LogConfig : IEntityTypeConfiguration<Log>
     {
-        public void Configure(EntityTypeBuilder<ApplicationLog> builder)
+        public void Configure(EntityTypeBuilder<Log> builder)
         {
-            builder.ToTable("APPLICATION_LOGS");
+            builder.ToTable("LOG");
 
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Id).HasColumnName("ID");
+            builder.Property(p => p.LogType).HasColumnName("LOG_TYPE");
             builder.Property(p => p.Message).HasColumnName("MESSAGE");
             builder.Property(p => p.LogTime).HasColumnName("LOG_TIME");
         }
