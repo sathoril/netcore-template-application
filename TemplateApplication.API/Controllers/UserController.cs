@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TemplateApplication.Domain.Entities;
@@ -23,7 +23,6 @@ namespace TemplateApplication.API.Controllers
         public ActionResult List()
         {
                 List<User> users = this.service.ListActives();
-                throw new Exception("Exceção teste");
                 return Ok(users);
         }
 
