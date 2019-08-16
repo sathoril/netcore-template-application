@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TemplateApplication.Domain.Entities;
+using TemplateApplication.Domain.Entities.Logs;
 using TemplateApplication.Domain.Services.Interfaces;
 using TemplateApplication.Domain.Validation;
 
@@ -22,90 +23,48 @@ namespace TemplateApplication.API.Controllers
         [Route("list")]
         public ActionResult List()
         {
-            try
-            {
                 List<User> users = this.service.ListActives();
                 return Ok(users);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
         }
 
         [HttpGet]
         [Route("find")]
         public ActionResult<string> Find(int id)
         {
-            try
-            {
-                User user = this.service.FindById(id);
-                return Ok(user);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            User user = this.service.FindById(id);
+            return Ok(user);
         }
 
         [HttpPost]
         [Route("add")]
         public ActionResult AddUser([FromBody] User newUser)
         {
-            try
-            {
-                this.service.Add(newUser);
-                return Ok("User added");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            this.service.Add(newUser);
+            return Ok("User added");
         }
 
         [HttpPost]
         [Route("addUsers")]
         public ActionResult AddUsers([FromBody] List<User> newUsers)
         {
-            try
-            {
-                this.service.Add(newUsers);
-                return Ok("Users added");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            this.service.Add(newUsers);
+            return Ok("Users added");
         }
 
         [Route("update")]
         [HttpPost]
         public ActionResult UpdateUser([FromBody] User updatedUser)
         {
-            try
-            {
-                this.service.Update(updatedUser);
-                return Ok("User updated");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            this.service.Update(updatedUser);
+            return Ok("User updated");
         }
 
         [HttpPost]
         [Route("updateUsers")]
         public ActionResult UpdateUsers([FromBody] List<User> updatedUsers)
         {
-            try
-            {
-                this.service.Update(updatedUsers);
-                return Ok("Users updated");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            this.service.Update(updatedUsers);
+            return Ok("Users updated");
         }
     }
 }

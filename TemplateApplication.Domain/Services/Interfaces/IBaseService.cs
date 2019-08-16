@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TemplateApplication.Domain.Services.Interfaces
 {
-    public interface IBaseService<T> where T : class
+    public interface IBaseService<T>
     {
         void Add(T obj);
         void Add(List<T> objs);

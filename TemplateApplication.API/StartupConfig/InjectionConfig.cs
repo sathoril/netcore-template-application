@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TemplateApplication.Data.Repositories;
+using TemplateApplication.Domain.Entities.Logs;
+using TemplateApplication.Domain.Repositories;
 using TemplateApplication.Domain.Repositories.Interfaces;
 using TemplateApplication.Domain.Services;
 using TemplateApplication.Domain.Services.Interfaces;
 
 namespace TemplateApplication.API.StartupConfiguration
 {
-    public partial class InjectionConfig
+    public class InjectionConfig
     {
         public static void Configure(IServiceCollection services)
         {
@@ -21,6 +23,7 @@ namespace TemplateApplication.API.StartupConfiguration
         public static void ConfigureRepositories(IServiceCollection services)
         {
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddScoped<ILogService, LogService>();
         }
 
         public static void ConfigureServices(IServiceCollection services)

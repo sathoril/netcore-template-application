@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TemplateApplication.Data.Context.EntitiesConfig;
 using TemplateApplication.Domain.Entities;
+using TemplateApplication.Domain.Entities.Logs;
 
 namespace TemplateApplication.Data.Context
 {
@@ -8,6 +9,7 @@ namespace TemplateApplication.Data.Context
     {
         // Here just configure your entities
         public DbSet<User> User { get; set; }
+        public DbSet<Log> Log { get; set; }
 
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
@@ -18,6 +20,7 @@ namespace TemplateApplication.Data.Context
         {
             // Here just configure your entities
             modelBuilder.ApplyConfiguration(new UserConfig());
+            modelBuilder.ApplyConfiguration(new LogConfig());
         }
     }
 }
