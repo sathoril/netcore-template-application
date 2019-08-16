@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using TemplateApplication.Domain.Entities;
-using TemplateApplication.Domain.Entities.Validation;
 using TemplateApplication.Domain.Repositories.Interfaces;
 using TemplateApplication.Domain.Services.Interfaces;
+using TemplateApplication.Domain.Validation;
 
 namespace TemplateApplication.Domain.Services
 {

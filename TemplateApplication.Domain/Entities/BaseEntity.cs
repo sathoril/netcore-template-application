@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using TemplateApplication.Domain.Entities.Validation;
-using TemplateApplication.Domain.Services.Interfaces;
+using TemplateApplication.Domain.Validation;
+using TemplateApplication.Domain.Validation.Interfaces;
 
 namespace TemplateApplication.Domain.Entities
 {

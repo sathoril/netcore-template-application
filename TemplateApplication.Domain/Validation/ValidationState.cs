@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TemplateApplication.Domain.Entities.Validation
+namespace TemplateApplication.Domain.Validation
 {
     public class ValidationState
     {
