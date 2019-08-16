@@ -2,10 +2,10 @@
  *.dll
 
 # Ignore folder .vs and biit nary folders
-vs/
+.vs/
 TemplateApplication.API/bin/
 TemplateApplication.API/obj/
 TemplateApplication.Data/bin/
 TemplateApplication.Data/obj/
 TemplateApplication.Domain/bin/
-TemplateApplication.Domain/onj/
+TemplateApplication.Domain/obj/
