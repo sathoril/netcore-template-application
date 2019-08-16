@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TemplateApplication.Domain.Entities;
 using TemplateApplication.Domain.Services.Interfaces;
+using TemplateApplication.Domain.Validation;
 
 namespace TemplateApplication.API.Controllers
 {
