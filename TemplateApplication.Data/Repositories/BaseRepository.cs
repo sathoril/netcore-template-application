@@ -7,7 +7,7 @@ using TemplateApplication.Domain.Repositories.Interfaces;
 
 namespace TemplateApplication.Data.Repositories
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected readonly DatabaseContext context;
 
@@ -58,7 +58,8 @@ namespace TemplateApplication.Data.Repositories
 
         public List<T> ListActives()
         {
-            IQueryable<T> query = this.context.Set<T>().Where(w => w.Active == "A");
+            IQueryable<T> query = this.context.Set<T>();
+                //.Where(w => w.Active == "A");
             return query.ToList();
         }
     }
